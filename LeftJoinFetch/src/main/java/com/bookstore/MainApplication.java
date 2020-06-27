@@ -33,8 +33,8 @@ public class MainApplication {
 
             List<Book> books = bookstoreService.fetchBookWithAuthor();
             System.out.println("----"+ books);
-//            books.forEach(b -> System.out.println("Book title: "
-//                    + b.getTitle() + " Author: " + b.getAuthor()));
+            books.forEach(b -> System.out.println("Book title: "
+                    + b.getTitle() + " Author: " + b.getAuthor()));
         };
     }
 }
