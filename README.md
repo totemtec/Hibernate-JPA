@@ -1,2 +1,12 @@
-# Hibernate-JPA
-中文版 Hibernate-SpringBoot translate from https://github.com/AnghelLeonard/Hibernate-SpringBoot
+## Hibernate-JPA
+Hibernate-JPA最佳实践
+
+** 注意事项 **
+- 生产中不要使用自动建表，会造成字段顺序、字段长度、字符集(character set)、比对规则(collation)、索引(index)等问题
+
+------------------------------------------------------------------------------------------
+原文及代码来自：
+
+https://github.com/AnghelLeonard/Hibernate-SpringBoot
+
+------------------------------------------------------------------------------------------
