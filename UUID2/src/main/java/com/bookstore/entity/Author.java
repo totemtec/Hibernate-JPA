@@ -1,14 +1,12 @@
 package com.bookstore.entity;
 
-import org.hibernate.annotations.GenericGenerator;
-
 import java.io.Serializable;
 import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 public class Author implements Serializable {
@@ -16,9 +14,9 @@ public class Author implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GenericGenerator(name = "jpa-uuid", strategy = "uuid")
-    @GeneratedValue(generator = "jpa-uuid")
-    @Column(columnDefinition = "varchar(32)")
+    @Column(columnDefinition = "VARCHAR(64)")
+    @GeneratedValue(generator = "uuid2")
+    @GenericGenerator(name = "uuid2", strategy = "uuid2")
     private String id;
 
     private int age;
@@ -31,7 +29,7 @@ public class Author implements Serializable {
 
     public void setId(String id) {
         this.id = id;
-    }   
+    }
 
     public String getName() {
         return name;
