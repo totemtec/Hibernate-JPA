@@ -10,6 +10,8 @@ include 'JoinVSJoinFetch'
 include 'LeftJoinFetch'
 include 'JoinFetch'
 include 'Optional'
+include 'OneToOneForeignKeyBased'
+include 'OneToOneSharedPrimaryKey'
 include 'OneToOneMapsId'
 
 include 'JoinFetchPageable'
