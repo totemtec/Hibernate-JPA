@@ -13,7 +13,7 @@ import javax.persistence.Table;
 public class WorkStation {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private Integer workstationNumber;
@@ -53,5 +53,15 @@ public class WorkStation {
 
     public void setEmployee(Employee employee) {
         this.employee = employee;
+    }
+
+    @Override
+    public String toString() {
+        return "WorkStation{" +
+                "id=" + id +
+                ", workstationNumber=" + workstationNumber +
+                ", floor='" + floor + '\'' +
+//                ", employee=" + employee +
+                '}';
     }
 }

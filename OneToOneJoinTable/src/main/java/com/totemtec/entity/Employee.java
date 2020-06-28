@@ -14,7 +14,7 @@ import javax.persistence.Table;
 @Entity
 public class Employee {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
@@ -46,5 +46,14 @@ public class Employee {
 
     public void setWorkStation(WorkStation workStation) {
         this.workStation = workStation;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", workStation=" + workStation +
+                '}';
     }
 }

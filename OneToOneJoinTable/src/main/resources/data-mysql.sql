@@ -1,23 +1,43 @@
-
-CREATE TABLE `vehicle` (
+DROP TABLE IF EXISTS `employee`;
+CREATE TABLE `employee` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `license` varchar(20) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `name` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ;
 
 BEGIN;
-INSERT INTO `vehicle` VALUES (10, '冀FSL670');
-INSERT INTO `vehicle` VALUES (20, '京ABCDEF');
+INSERT INTO `employee` VALUES (2, '马江林');
+INSERT INTO `employee` VALUES (3, '史密斯');
+INSERT INTO `employee` VALUES (4, '布什');
+INSERT INTO `employee` VALUES (5, '乔治');
 COMMIT;
 
-CREATE TABLE `driver` (
+
+DROP TABLE IF EXISTS `work_station`;
+CREATE TABLE `work_station` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `user_name` varchar(20) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `vehicle_id` bigint(20) DEFAULT NULL,
+  `workstation_number` bigint(20) DEFAULT NULL,
+  `floor` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ;
 
 BEGIN;
-INSERT INTO `driver` VALUES (1, '马江林', 20);
-INSERT INTO `driver` VALUES (2, '那谁谁', 10);
+INSERT INTO `work_station` VALUES (30, 303, '3层');
+INSERT INTO `work_station` VALUES (40, 404, '4层');
+INSERT INTO `work_station` VALUES (50, 505, '5层');
+INSERT INTO `work_station` VALUES (60, 606, '6层');
+COMMIT;
+
+
+DROP TABLE IF EXISTS `emp_workstation`;
+CREATE TABLE `emp_workstation` (
+  `employee_id` bigint(20) NOT NULL,
+  `workstation_id` bigint(20) NOT NULL
+) ;
+
+BEGIN;
+INSERT INTO `emp_workstation` VALUES (2, 30);
+INSERT INTO `emp_workstation` VALUES (3, 40);
+INSERT INTO `emp_workstation` VALUES (4, 50);
+INSERT INTO `emp_workstation` VALUES (5, 60);
 COMMIT;
