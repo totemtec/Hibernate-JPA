@@ -28,18 +28,18 @@ public class MainApplication {
         return args -> {
 //            mainService.newDriverAndVehicle();
 
-//            mainService.newVehicleForDriver(1L);
+            mainService.newVehicleForDriver(1L);
 
 //            List<Driver> driverList = mainService.getDriverList();
 //            driverList.forEach(driver -> {
 //                System.out.println(driver);
 //            });
 
-            List<Vehicle> vehicleList = mainService.getVehicleList();
-            vehicleList.forEach(vehicle -> {
-                System.out.println(vehicle);
-                System.out.println(vehicle.getDriver());
-            });
+//            List<Vehicle> vehicleList = mainService.getVehicleList();
+//            vehicleList.forEach(vehicle -> {
+//                System.out.println(vehicle);
+//                System.out.println(vehicle.getDriver());
+//            });
 
         };
     }

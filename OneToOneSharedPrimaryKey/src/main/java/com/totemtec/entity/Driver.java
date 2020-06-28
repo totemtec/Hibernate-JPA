@@ -16,8 +16,7 @@ public class Driver {
 
     private String userName;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "vehicle_id", referencedColumnName = "id")
+    @OneToOne(mappedBy = "driver", cascade = CascadeType.ALL)
     private Vehicle vehicle;
 
     public Long getId() {

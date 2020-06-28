@@ -1,10 +1,6 @@
 package com.totemtec.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 @Entity
 public class Vehicle {
@@ -15,7 +11,8 @@ public class Vehicle {
 
     private String license;
 
-    @OneToOne(mappedBy = "vehicle")
+    @OneToOne
+    @MapsId
     private Driver driver;
 
     public Long getId() {

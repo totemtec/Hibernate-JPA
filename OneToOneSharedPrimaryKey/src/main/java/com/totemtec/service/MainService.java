@@ -33,8 +33,9 @@ public class MainService {
         vehicle.setDriver(driver);
         driver.setVehicle(vehicle);
 
+        //下面两个任何一个都能达到保存的效果，一起调用也没问题
         driverRepository.save(driver);
-        vehicleRepository.save(vehicle);
+//        vehicleRepository.save(vehicle);
     }
 
     public List<Driver> getDriverList() {
