@@ -1,4 +1,4 @@
-**[在 `@OneToOne` 关系中使用 `@MapsId` 共享ID](https://github.com/totemtec/Hibernate-JPA/tree/master/OneToOneMapsId)**
+**[在 `@OneToOne` 关系中使用 `@MapsId` 共享ID主键](https://github.com/totemtec/Hibernate-JPA/tree/master/OneToOneMapsId)**
 
 **说明:** 
 相比常规的 `@OneToOne`, 单向地使用 `@OneToOne` 和 `@MapsId` 更好用. 

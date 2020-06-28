@@ -24,6 +24,8 @@ public class MainApplication {
         return args -> {
             bookstoreService.newBookOfAuthor();
 
+            System.out.println("\n\n\n");
+
             Book book = bookstoreService.fetchBookByAuthorId();
             System.out.println(book);
         };

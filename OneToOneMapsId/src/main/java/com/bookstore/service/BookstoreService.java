@@ -20,10 +20,11 @@ public class BookstoreService {
         this.bookRepository = bookRepository;
     }
 
+    // 必须带事务声明，否则出错
     @Transactional
     public void newBookOfAuthor() {
 
-        Author author = authorRepository.findById(1L).orElseThrow(RuntimeException::new);
+        Author author = authorRepository.findById(2L).orElseThrow(RuntimeException::new);
 
         Book book = new Book();
         book.setTitle("A History of Ancient Prague");
@@ -38,8 +39,8 @@ public class BookstoreService {
     @Transactional(readOnly = true)
     public Book fetchBookByAuthorId() {
 
-        Author author = authorRepository.findById(1L).orElseThrow(RuntimeException::new);
+        Author author = authorRepository.findById(2L).orElseThrow(RuntimeException::new);
 
-        return bookRepository.findById(1L).orElseThrow(RuntimeException::new);
+        return bookRepository.findById(2L).orElseThrow(RuntimeException::new);
     }
 }
