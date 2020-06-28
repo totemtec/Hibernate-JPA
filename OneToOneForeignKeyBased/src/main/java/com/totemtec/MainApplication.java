@@ -2,8 +2,7 @@ package com.totemtec;
 
 import com.totemtec.entity.Driver;
 import com.totemtec.entity.Vehicle;
-import com.totemtec.repository.VehicleRepository;
-import com.totemtec.repository.DriverRepository;
+import com.totemtec.service.MainService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
@@ -17,10 +16,7 @@ import java.util.List;
 public class MainApplication {
 
     @Autowired
-    private DriverRepository driverRepository;
-
-    @Autowired
-    private VehicleRepository vehicleRepository;
+    private MainService mainService;
 
     public static void main(String[] args) {
         SpringApplication.run(MainApplication.class, args);
@@ -30,30 +26,27 @@ public class MainApplication {
     @Bean
     public ApplicationRunner init() {
         return args -> {
-            // 自动使用 LEFT OUTER JOIN 一次全拿到
-//            Driver driver = driverRepository.findById(1L).orElse(null);
+
+//            Driver driver = mainService.getDriver(1L);
 //            System.out.println("driver : " + driver);
 //            Vehicle vehicle = driver.getVehicle();
 //            System.out.println("vehicle : " + vehicle);
 
-            // 单向一对一关系时，findAll会执行n+1次查询
-            // 双向一对一关系时，findAll会执行2n+1次查询
-            // 需要进行覆盖，自定义Query，使用LEFT JOIN FETCH 生成 LEFT OUTER JOIN
-//            List<Driver> drivers = driverRepository.findAll();
+
+//            List<Driver> drivers = mainService.getDriverList();
 //            drivers.forEach(driver -> {
-//                System.out.println("driver : " + driver);
+//                System.out.println("driver2 : " + driver);
 //            });
 
-//            Vehicle vehicle = vehicleRepository.findById(20L).orElse(null);
+//            Vehicle vehicle = mainService.getVehicle(20L);
 //            System.out.println("vehicle : " + vehicle);
 //            System.out.println("driver : " + vehicle.getDriver());
 
-            List<Vehicle> vehicleList = vehicleRepository.findAll();
+            List<Vehicle> vehicleList = mainService.getVehicleList();
             for (Vehicle vehicle : vehicleList) {
                 System.out.println("vehicle : " + vehicle);
                 System.out.println("driver : " + vehicle.getDriver());
             }
-
         };
     }
 }

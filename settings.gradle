@@ -13,6 +13,7 @@ include 'Optional'
 include 'OneToOneForeignKeyBased'
 include 'OneToOneSharedPrimaryKey'
 include 'OneToOneMapsId'
+include 'OneToOneJoinTable'
 
 include 'JoinFetchPageable'
 include 'JoinPagination'
