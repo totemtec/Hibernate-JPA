@@ -11,3 +11,7 @@ include 'LeftJoinFetch'
 include 'JoinFetch'
 include 'Optional'
 include 'OneToOneMapsId'
+
+include 'JoinFetchPageable'
+include 'JoinPagination'
+include 'ReadOnlyQueries'
