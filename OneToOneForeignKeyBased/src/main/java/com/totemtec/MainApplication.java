@@ -27,6 +27,13 @@ public class MainApplication {
     public ApplicationRunner init() {
         return args -> {
 
+//            Driver driver = mainService.createDriverAndVehicle();
+//            System.out.println(driver);
+
+            Driver driver = mainService.createVehicleForDriver(1L);
+            System.out.println(driver);
+
+
 //            Driver driver = mainService.getDriver(1L);
 //            System.out.println("driver : " + driver);
 //            Vehicle vehicle = driver.getVehicle();
@@ -42,11 +49,11 @@ public class MainApplication {
 //            System.out.println("vehicle : " + vehicle);
 //            System.out.println("driver : " + vehicle.getDriver());
 
-            List<Vehicle> vehicleList = mainService.getVehicleList();
-            for (Vehicle vehicle : vehicleList) {
-                System.out.println("vehicle : " + vehicle);
-                System.out.println("driver : " + vehicle.getDriver());
-            }
+//            List<Vehicle> vehicleList = mainService.getVehicleList();
+//            for (Vehicle vehicle : vehicleList) {
+//                System.out.println("vehicle : " + vehicle);
+//                System.out.println("driver : " + vehicle.getDriver());
+//            }
         };
     }
 }

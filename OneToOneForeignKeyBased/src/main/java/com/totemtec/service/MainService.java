@@ -20,6 +20,35 @@ public class MainService {
         this.driverRepository = driverRepository;
     }
 
+    @Transactional
+    public Driver createDriverAndVehicle() {
+        Driver driver = new Driver();
+        driver.setUserName("马江林");
+
+        Vehicle vehicle = new Vehicle();
+        vehicle.setLicense("冀FSL670");
+
+        vehicle.setDriver(driver);
+        driver.setVehicle(vehicle);
+
+        driver = driverRepository.save(driver);
+        return driver;
+    }
+
+    @Transactional
+    public Driver createVehicleForDriver(Long driverId) {
+        Driver driver = driverRepository.findById(driverId).orElseThrow(RuntimeException::new);
+
+        Vehicle vehicle = new Vehicle();
+        vehicle.setLicense("冀FSL670");
+        vehicle.setDriver(driver);
+        driver.setVehicle(vehicle);
+
+        driver = driverRepository.save(driver);
+        return driver;
+    }
+
+
     public Driver getDriver(Long id) {
         // 自动使用 LEFT OUTER JOIN 一次全拿到
         Driver driver = driverRepository.findById(id).orElse(null);
