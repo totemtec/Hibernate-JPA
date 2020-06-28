@@ -1,20 +1,21 @@
 package com.totemtec.entity;
 
-import javax.persistence.*;
-import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
-public class Vehicle implements Serializable {
+public class Vehicle {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String license;
 
-    // 这边再映射的话就是双向关系
-    @OneToOne
-    @MapsId
-//    @JoinColumn(name = "driver_id")  //这个可以根据 对象名_id 自动来判断
+    @OneToOne(mappedBy = "vehicle")
     private Driver driver;
 
     public Long getId() {
@@ -46,7 +47,7 @@ public class Vehicle implements Serializable {
         return "Vehicle{" +
                 "id=" + id +
                 ", license='" + license + '\'' +
-                ", driver=" + driver +
+//                ", driver=" + driver +
                 '}';
     }
 }

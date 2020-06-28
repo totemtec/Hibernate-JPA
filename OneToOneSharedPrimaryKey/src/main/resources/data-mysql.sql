@@ -7,10 +7,6 @@ CREATE TABLE `driver` (
   PRIMARY KEY (`id`)
 ) ;
 
-BEGIN;
-INSERT INTO `driver` VALUES (1, '马江林', 20);
-INSERT INTO `driver` VALUES (2, '那谁谁', 10);
-COMMIT;
 
 
 DROP TABLE IF EXISTS `vehicle`;
